@@ -1,0 +1,4 @@
+export ISO_FILE=$1
+export INPUT_FOLDER=$2
+export VOLUME_NAME=$3
+mkisofs -V $VOLUME_NAME -r -o $ISO_FILE $INPUT_FOLDER
