@@ -3,11 +3,11 @@
 # Usage setIcon.sh iconimage.jpg /path/to/[file|folder]
 iconSource=$1
 iconDestination=$2
-icon=/tmp/`basename $iconSource`
+icon=/tmp/temp.png
 rsrc=/tmp/icon.rsrc
 
 # Create icon from the iconSource
-cp $iconSource $icon
+convert $iconSource -quality 40 -thumbnail 512x512 $icon
 
 # Add icon to image file, meaning use itself as the icon
 sips -i $icon
@@ -34,5 +34,5 @@ fi
 #osascript -e 'delay 2'
 #osascript -e 'tell application "Finder" to activate'
 
-rm $rsrc $icon
+#rm $rsrc $icon
 
